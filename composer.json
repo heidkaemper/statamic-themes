@@ -1,0 +1,48 @@
+{
+    "name": "heidkaemper/statamic-themes",
+    "license": "MIT",
+    "type": "statamic-addon",
+    "description": "Themes for the Control Panel of Statamic CMS",
+    "require": {
+        "statamic/cms": "5.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.6",
+        "pestphp/pest": "^3.8",
+        "laravel/pint": "^1.25"
+    },
+    "autoload": {
+        "psr-4": {
+            "Heidkaemper\\StatamicThemes\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Heidkaemper\\StatamicThemes\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "phpcs": "vendor/bin/pint -v --test",
+        "phpcs:fix": "vendor/bin/pint",
+        "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Themes",
+            "description": "Themes for the Control Panel of Statamic CMS"
+        },
+        "laravel": {
+            "providers": [
+                "Heidkaemper\\StatamicThemes\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
