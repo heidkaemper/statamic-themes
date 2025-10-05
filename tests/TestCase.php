@@ -21,6 +21,15 @@ class TestCase extends AddonTestCase
         $this->setUpTestData();
     }
 
+    protected function getPackageProviders($app): array
+    {
+        return [
+            \Statamic\Providers\StatamicServiceProvider::class,
+            \Inertia\ServiceProvider::class,
+            $this->addonServiceProvider,
+        ];
+    }
+
     protected function setUpTestData(): void
     {
         $role = (new Role)
