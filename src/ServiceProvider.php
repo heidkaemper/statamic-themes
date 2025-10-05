@@ -30,7 +30,7 @@ class ServiceProvider extends AddonServiceProvider
                             'type' => 'select',
                             'display' => __('Theme'),
                             'instructions' => __('themes::general.instructions'),
-                            'default' => 'default',
+                            'clearable' => true,
                             'options' => $options,
                         ],
                     ],
