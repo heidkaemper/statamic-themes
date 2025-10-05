@@ -19,7 +19,7 @@ class ServiceProvider extends AddonServiceProvider
     {
         Preference::extend(function () {
             $options = collect(Manager::all())
-                ->mapWithKeys(fn ($theme, $key) => [$key => $theme['display']])
+                ->mapWithKeys(fn ($theme, $key) => [$key => $theme['display'] ?? $key])
                 ->prepend(__('Default'), 'default')
                 ->all();
 

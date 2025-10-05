@@ -2,24 +2,37 @@
 
 namespace Heidkaemper\StatamicThemes\Tests;
 
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
+use Heidkaemper\StatamicThemes\ServiceProvider;
+use Statamic\Auth\File\Role;
+use Statamic\Facades\Stache;
+use Statamic\Facades\User;
+use Statamic\Testing\AddonTestCase;
 
-class TestCase extends OrchestraTestCase
+class TestCase extends AddonTestCase
 {
-    protected function getPackageProviders($app): array
+    protected string $addonServiceProvider = ServiceProvider::class;
+
+    protected $user;
+
+    protected function setUp(): void
     {
-        return [
-            \Statamic\Providers\StatamicServiceProvider::class,
-            \Heidkaemper\StatamicThemes\ServiceProvider::class,
-        ];
+        parent::setUp();
+
+        $this->setUpTestData();
     }
 
-    protected function resolveApplicationConfiguration($app)
+    protected function setUpTestData(): void
     {
-        parent::resolveApplicationConfiguration($app);
+        $role = (new Role)
+            ->handle('test')
+            ->addPermission('access cp')
+            ->save();
 
-        $app['config']->set('statamic.users.repository', 'file');
+        $this->user = User::make()
+            ->email('john@example.com')
+            ->assignRole($role)
+            ->save();
 
-        $app['config']->set('statamic.themes', require (__DIR__ . '/../config/themes.php'));
+        Stache::clear();
     }
 }

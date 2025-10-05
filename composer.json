@@ -4,11 +4,11 @@
     "type": "statamic-addon",
     "description": "Themes for the Control Panel of Statamic CMS",
     "require": {
-        "statamic/cms": "5.*"
+        "statamic/cms": "^6.0"
     },
     "require-dev": {
         "orchestra/testbench": "^10.6",
-        "pestphp/pest": "^3.8",
+        "pestphp/pest": "^4.1",
         "laravel/pint": "^1.25"
     },
     "autoload": {
