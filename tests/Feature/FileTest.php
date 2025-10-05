@@ -5,7 +5,7 @@ it('injects css file', function () {
 
     file_put_contents($path, 'body { background: pink; }');
 
-    $this->app['config']->set('statamic.themes.themes', [
+    $this->app['config']->set('statamic.themes.additional_themes', [
         'test_theme' => [
             'file' => $path,
         ],
@@ -23,7 +23,7 @@ it('injects css file', function () {
 });
 
 it('fails gracefully when file is invalid', function () {
-    $this->app['config']->set('statamic.themes.themes', [
+    $this->app['config']->set('statamic.themes.additional_themes', [
         'test_theme' => [
             'file' => 'non_existing_file.css',
         ],

@@ -1,7 +1,7 @@
 <?php
 
 it('sets config then user has selected a theme', function () {
-    $theme_values = config('statamic.themes.themes.statamic5.theme');
+    $theme_values = config('statamic.themes.additional_themes.statamic5.theme');
 
     $this->user->preferences([
         'base_theme' => 'statamic5',

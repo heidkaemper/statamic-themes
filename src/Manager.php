@@ -11,7 +11,7 @@ class Manager
 {
     public static function all(): array
     {
-        return config('statamic.themes.themes') ?? [];
+        return config('statamic.themes.additional_themes') ?? [];
     }
 
     public static function find(string $key): ?array
