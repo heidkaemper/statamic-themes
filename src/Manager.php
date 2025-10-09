@@ -29,7 +29,7 @@ class Manager
 
         Config::set('statamic.cp.theme', $theme['theme'] ?? []);
 
-        if ($theme['file']) {
+        if ($theme['file'] ?? false) {
             self::pushCss($theme['file']);
         }
     }

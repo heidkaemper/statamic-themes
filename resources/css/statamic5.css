@@ -55,4 +55,9 @@ html:not(.dark) header.bg-global-header-bg {
 
 #main {
     border-radius: 0;
+
+    /* temp */
+    [data-ui-header] > h1 .bg-white:has(> svg) {
+        background-color: transparent;
+    }
 }
