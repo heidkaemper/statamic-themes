@@ -24,12 +24,7 @@
     --color-black: oklch(0.2046 0 0);
 
     /* temp */
-    --color-gray-950: var(--theme-color-gray-950);
-
-    /* temp */
-    .bard-fieldtype .bard-content {
-        background-color: var(--theme-color-gray-950);
-    }
+    --color-gray-950: var(--theme-color-gray-950) !important;
 }
 
 html:not(.dark) header.bg-global-header-bg {
