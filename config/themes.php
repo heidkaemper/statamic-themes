@@ -16,6 +16,7 @@ return [
     */
 
     'additional_themes' => [
+        ...Themes::Rad,
         ...Themes::Statamic5,
 
         // 'custom-theme' => [
@@ -28,4 +29,5 @@ return [
         //     'file' => 'path/to/additional/theme-file.css',
         // ],
     ],
+
 ];

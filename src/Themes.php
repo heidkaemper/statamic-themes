@@ -36,4 +36,17 @@ class Themes
             'file' => __DIR__ . '/../resources/css/statamic5.css',
         ],
     ];
+
+    public const Rad = [
+        'rad' => [
+            'display' => 'Rad',
+            'theme' => [
+                'primary' => '#FF269E',
+                'global-header-bg' => 'transparent',
+                'dark-global-header-bg' => 'transparent',
+                'dark-content-bg' => 'transparent',
+            ],
+            'file' => __DIR__ . '/../resources/css/rad.css',
+        ],
+    ];
 }

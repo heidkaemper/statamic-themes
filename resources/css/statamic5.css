@@ -28,7 +28,7 @@
 }
 
 html:not(.dark) header.bg-global-header-bg {
-    box-shadow: 0 0 0 1px rgb(49 49 93 / 5%), 0 2px 5px 0 rgb(49 49 93 / 7.5%), 0 1px 3px 0 rgb(49 49 93 / 15%);
+    box-shadow: 0 0 0 1px oklch(0.3365 0.0762 281.51 / 5%), 0 2px 5px 0 oklch(0.3365 0.0762 281.51 / 7.5%), 0 1px 3px 0 oklch(0.3365 0.0762 281.51 / 15%);
     --color-white: var(--theme-color-gray-900);
     --color-green-300: oklch(62.7% 0.194 149.214);
 
