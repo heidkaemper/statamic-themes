@@ -3,7 +3,6 @@
 namespace Heidkaemper\StatamicThemes\Tests;
 
 use Heidkaemper\StatamicThemes\ServiceProvider;
-use Statamic\Auth\File\Role;
 use Statamic\Facades\Stache;
 use Statamic\Facades\User;
 use Statamic\Testing\AddonTestCase;
@@ -18,19 +17,19 @@ class TestCase extends AddonTestCase
     {
         parent::setUp();
 
+        $this->artisan('statamic:install');
+        $this->withVite();
+
         $this->setUpTestData();
     }
 
     protected function setUpTestData(): void
     {
-        $role = (new Role)
-            ->handle('test')
-            ->addPermission('access cp')
-            ->save();
+        User::all()->each(fn ($user) => $user->delete());
 
         $this->user = User::make()
             ->email('john@example.com')
-            ->assignRole($role)
+            ->makeSuper()
             ->save();
 
         Stache::clear();

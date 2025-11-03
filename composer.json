@@ -9,7 +9,8 @@
     "require-dev": {
         "orchestra/testbench": "^10.6",
         "pestphp/pest": "^4.1",
-        "laravel/pint": "^1.25"
+        "laravel/pint": "^1.25",
+        "pestphp/pest-plugin-browser": "^4.1"
     },
     "autoload": {
         "psr-4": {
