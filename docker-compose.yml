@@ -5,7 +5,6 @@ services:
       - .:/app
       - /app/node_modules
       - /app/vendor
-      - ./tests/.pest/snapshots:/app/tests/.pest/snapshots
     environment:
       - APP_ENV=testing
       - XDEBUG_MODE=off

@@ -35,3 +35,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
       - run: docker compose run --rm --remove-orphans pest tests/Browser/ --ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-screenshots
+          path: ./tests/Browser/Screenshots/
+          retention-days: 1
