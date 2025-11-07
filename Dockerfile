@@ -3,7 +3,11 @@ FROM ubuntu:24.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # system dependencies
-RUN apt-get update && apt-get install -y curl wget git zip unzip ca-certificates gnupg
+RUN apt-get update && apt-get install -y curl wget git zip unzip ca-certificates gnupg \
+    # Add fonts for consistent rendering
+    fonts-liberation fonts-dejavu-core fonts-freefont-ttf \
+    # Virtual display for headless testing
+    xvfb
 
 # node
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
