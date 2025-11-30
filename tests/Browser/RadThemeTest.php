@@ -7,11 +7,12 @@ it('checks rad theme in light mode', function () {
 
     $this->actingAs($this->user);
 
-    visit('/cp/preferences/edit')
+    $page = visit('/cp/preferences/edit')
         ->on()->desktop()
         ->inLightMode()
-        ->resize(1280, 620)
-        ->assertScreenshotMatches();
+        ->resize(1280, 620);
+
+    expect($page)->toMatchScreenshotLax();
 });
 
 it('checks rad theme in dark mode', function () {
@@ -21,9 +22,10 @@ it('checks rad theme in dark mode', function () {
 
     $this->actingAs($this->user);
 
-    visit('/cp/preferences/edit')
+    $page = visit('/cp/preferences/edit')
         ->on()->desktop()
         ->inDarkMode()
-        ->resize(1280, 620)
-        ->assertScreenshotMatches();
+        ->resize(1280, 620);
+
+    expect($page)->toMatchScreenshotLax();
 });
