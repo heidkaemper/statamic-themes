@@ -10,6 +10,7 @@ expect()->extend('toMatchScreenshotLax', function () {
     $page->addStyleTag('* {
         transition: none !important;
         animation: none !important;
+        font-family: Arial, sans-serif !important;
         body {
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
