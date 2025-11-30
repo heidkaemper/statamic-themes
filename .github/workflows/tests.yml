@@ -36,7 +36,7 @@ jobs:
         with:
           node-version: lts/*
       - run: composer install --no-interaction --prefer-dist --optimize-autoloader
-      - run: npm ci
+      - run: npm install
       - run: npx playwright install --with-deps
       - run: ./vendor/bin/pest tests/Browser/ --ci
       - uses: actions/upload-artifact@v4
