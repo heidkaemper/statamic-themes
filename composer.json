@@ -25,7 +25,9 @@
     "scripts": {
         "phpcs": "vendor/bin/pint -v --test",
         "phpcs:fix": "vendor/bin/pint",
-        "test": "vendor/bin/pest"
+        "test": "vendor/bin/pest tests/Feature/",
+        "test:browser": "docker compose run --rm pest tests/Browser/",
+        "test:browser:update": "docker compose run --rm pest tests/Browser/ --update-snapshots"
     },
     "extra": {
         "statamic": {
