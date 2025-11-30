@@ -41,10 +41,12 @@ class Themes
         'rad' => [
             'display' => 'Rad',
             'theme' => [
-                'primary' => '#FF269E',
+                'primary' => 'oklch(0.665 0.2571 354.12)',
                 'global-header-bg' => 'transparent',
                 'dark-global-header-bg' => 'transparent',
                 'dark-content-bg' => 'transparent',
+                'switch-bg' => 'oklch(0.665 0.2571 354.12)',
+                'dark-switch-bg' => 'oklch(62.7% 0.194 149.214)',
             ],
             'file' => __DIR__ . '/../resources/css/rad.css',
         ],
