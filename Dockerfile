@@ -15,15 +15,11 @@ RUN apt-get install -y php8.3-common php8.3-cli php8.3-mbstring php8.3-zip php8.
 # composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-WORKDIR /app
-
-COPY package.json composer.json ./
-
-RUN npm install
 RUN npx playwright install chromium --with-deps
 
-RUN composer install --no-scripts --no-autoloader --no-interaction
+WORKDIR /app
 
-COPY . .
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-RUN composer dump-autoload --optimize
+ENTRYPOINT ["/entrypoint.sh"]
